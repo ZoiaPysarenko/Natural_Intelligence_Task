@@ -1,0 +1,303 @@
+:root {
+    --color-primary: #fff;
+    --color-secondary: #585454;
+
+    
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0; }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit; 
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.cp__item {
+    width: calc(100% - 50px);
+    border-radius: 5px;
+    box-shadow: 0 0 1px #9a8c8c;
+    margin-bottom: 20px;
+    max-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+    .cp__item-thumb {
+        position: relative;
+        /* background-color: var(--color-secondary); */
+        order: -1;
+        height: 200px;
+        width: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cp__item-thumb::after {
+        content: "Exclusive Offer";
+        position: absolute;
+        top: 0;
+        left: 25%;
+        right: 25%;
+        height: 18px;
+        width: 50%;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.87);
+        background-color: #4a90e2;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        text-align: center;
+    }
+
+    .cp__item-header {
+        height: 50px;
+        width: 50%;
+    }
+        .info__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .info__header > * {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+            .info__header-name {
+                flex-direction: row;
+                height: 30px;
+                width: 150px;
+                /* background-color: var(--color-secondary); */
+
+                font-size: 18px;
+                color: #339d48;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+                .cp__icon {
+                    margin-right: 5px;
+                    font-size: 25px;
+                }
+
+            .rating-box {
+                display: flex;
+            }
+
+            .info__header-rating{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info__header-rating > * {
+                line-height: 1;
+            }
+
+                .cp__score-n{
+                    color: #000000;
+                    font-size: 25px;
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                }
+
+                .cp__score-w {
+                    color: rgba(34, 34, 34, 0.87);
+                    font-weight: 400;
+                    line-height: 13px;
+                    font-size: 12px;
+                }
+
+            .review-mob {
+                display: none;
+            }
+
+    .cp__bottom-block {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .cp__item-body {
+        width: 100%;
+        font-size: 14px;
+    }
+
+        .cp__pros {
+            margin: 10px 15px;
+            list-style: none;
+            line-height: 1.5;
+            color: rgba(34, 34, 34, 0.87);
+        }
+
+            .cp__pros-item::before {
+                content: "";
+                display: inline-block;
+                height: 9px;
+                width: 9px;
+                margin-right: 10px;
+                background-image: url(images/checked.png);
+                background-size: contain;
+            }
+
+    .cp__item-footer {
+        height: 50px;
+        width: 100%;
+    }
+
+        .info__footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .btn {
+           border: none;
+        }
+
+            .btn__read {
+                height: 40px;
+                width: 150px;
+                border: none;
+                background: transparent;
+                color: #ff6a56;
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .btn__order, .btn__visit {
+                background-image: linear-gradient(180deg, #ff8373 0%, #ff6a56 100%);
+                width: 150px;
+                height: 40px;
+                border-radius: 3px;
+                color: #ffffff;
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+
+            .btn__visit {
+                display: none;
+            }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: initial;
+        margin: 5px 5px;
+    }
+
+    .cp__item {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        max-height: initial;
+    }
+
+    .cp__item > * {
+        width: 100%;
+    }
+
+        .cp__item-header {
+            order: -2;
+            
+        }
+
+            .info__header-rating {
+                flex-direction: row;
+                width: auto;
+            }
+
+                .cp__score-w{
+                    margin-right: 5px;
+                    color: rgba(34, 34, 34, 0.87);
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 13px;
+                }
+
+                .cp__score-n {
+                    color: #222222;
+                    font-size: 15px;
+                    font-weight: 700;
+                    letter-spacing: -0.25px;
+                }
+        .review-mob {
+            display: block;
+        }
+
+            .btn__read {
+                height: initial;
+                width: 100px;
+                margin-top: 2px;
+            }
+
+    .cp__bottom-block {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+        .cp__item-body {
+            flex: 0 0 67%;
+            max-height: 56px;
+            overflow: hidden;
+        }
+
+        .cp__item-footer {
+            flex: 0 0 33%;
+        }
+
+        .info__footer > .btn__read {
+            display: none;
+        }
+
+        .btn__order {
+            display: none;
+        }
+
+        .btn__visit {
+            display: initial;
+            height: 32px;
+            width: 93px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.2;
+        }
+
+        .cp__item-thumb::after {
+            content: "Get 30$ Off";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-align: center;
+            border-radius: 0 0 3px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 500;
+            clip-path: none;
+            width: 30%;
+            line-height: 1.5;
+            padding: 5px 15px;
+        }
+}
